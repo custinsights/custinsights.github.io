@@ -1,6 +1,6 @@
 ![](assets/CustomerInsightsCrop.jpg)
 # Customer Insights
-Website for the Customer Insights Project (CS 7641 - Machine Learning @ Georgia Tech)
+> Project Group 33: Sidhant Subramanian, Sreenidhi Reddy Bommu, Bharat Raghunathan, Ayushi Mathur, Vishnu Varma Venkata
 
 ## Proposal
 ### Introduction/Background
@@ -10,7 +10,7 @@ The integration of machine learning (ML) in digital marketing revolutionises per
 
 ### Literature Review
 
-Machine learning's role in decoding customer personalities is pivotal for personalised marketing. Kosinski, Stillwell, and Graepel (1) showcased ML's ability to predict personal attributes from digital footprints, establishing a basis for personality-driven marketing strategies. Matz et al. (2) further validated the efficacy of personality-tailored advertising in boosting engagement and sales, highlighting ML's capacity to resonate marketing with individual personalities. Zhang, Wang, and Yu (3) demonstrated advanced segmentation techniques, emphasising ML's utility in achieving deeper marketing personalization through customer segmentation based on personality traits.
+Machine learning's role in decoding customer personalities is pivotal for personalised marketing. Kosinski, Stillwell, and Graepel [1] showcased ML's ability to predict personal attributes from digital footprints, establishing a basis for personality-driven marketing strategies. Matz et al. [2] further validated the efficacy of personality-tailored advertising in boosting engagement and sales, highlighting ML's capacity to resonate marketing with individual personalities. Zhang, Wang, and Yu [3] demonstrated advanced segmentation techniques, emphasising ML's utility in achieving deeper marketing personalization through customer segmentation based on personality traits.
 
 
 ### Dataset Description and Link
@@ -89,10 +89,12 @@ A clustering algorithm based on density which allows for cluster sizes and densi
 | Sreenidhi | Introduction, Literature Review |
 | Ayushi  | Problem Definition, Motivation   |
 | Sidhant | Methods, Results and Discussion |
-| Bharat  | Report, GitHub Repository, Gantt Chart |
-| Vishnu  | Video, Presentation              |
+| Bharat  | GitHub Repository, Gantt Chart |
+| Vishnu  | Report, Video, Presentation              |
 
 ### References
-1. M. Kosinski, D. Stillwell, and T. Graepel, "Private traits and attributes are predictable from digital records of human behavior," Proceedings of the National Academy of Sciences, vol. 110, no. 15, pp. 5802-5805, April 2013.
-2. S.C. Matz, M. Kosinski, G. Nave, and D.J. Stillwell, "Psychological targeting as an effective approach to digital mass persuasion," Proceedings of the National Academy of Sciences, vol. 114, no. 48, pp. 12714-12719, November 2017.
-3. J. Zhang, Y. Wang, and P.S. Yu, "Community structure detection in social networks with node attributes," IEEE Transactions on Knowledge and Data Engineering, vol. 31, no. 10, pp. 1984-1997, Oct. 2019.
+[1]: M. Kosinski, D. Stillwell, and T. Graepel, "Private traits and attributes are predictable from digital records of human behavior," Proceedings of the National Academy of Sciences, vol. 110, no. 15, pp. 5802-5805, April 2013.
+
+[2]: S.C. Matz, M. Kosinski, G. Nave, and D.J. Stillwell, "Psychological targeting as an effective approach to digital mass persuasion," Proceedings of the National Academy of Sciences, vol. 114, no. 48, pp. 12714-12719, November 2017.
+
+[3]: J. Zhang, Y. Wang, and P.S. Yu, "Community structure detection in social networks with node attributes," IEEE Transactions on Knowledge and Data Engineering, vol. 31, no. 10, pp. 1984-1997, Oct. 2019.
