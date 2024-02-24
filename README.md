@@ -40,7 +40,7 @@ Transforming categorical variables into other representations using one-hot enco
 Technique applied to make the input features of the dataset belong to  similar ranges and to ensure all features have the same effect on the model.
 
 **Dimensionality reduction:** 
-Transforming the dimensionality of features from higher to lower while retaining most of the information like Principal component analysis (PCA) or Linear discriminant analysis(LDA). We use this technique since higher dimensionality features risks creating a complex model which leads to overfitting, they also require higher computation and reduce model interpretability.
+Transforming the dimensionality of features from higher to lower while retaining most of the information like **Principal component analysis (PCA)** or **Linear discriminant analysis(LDA)**. We use this technique since higher dimensionality features risks creating a complex model which leads to overfitting, they also require higher computation and reduce model interpretability.
 
 **Correlation:**
 Dropping highly correlated features to avoid multicollinearity.
@@ -49,7 +49,8 @@ Dropping highly correlated features to avoid multicollinearity.
 
 #### Linear SVM
 This algorithm can separate the data using a single linear decision boundary. It is computationally less expensive and relatively faster to train on.
-Random Forest
+
+#### Random Forest
 This algorithm can separate the data with a non-linear decision boundary and can take into account interactions between variables. They are known to be robust and resistant to overfitting.
 
 #### Neural Network
@@ -82,7 +83,7 @@ A clustering algorithm based on density which allows for cluster sizes and densi
 2. Silhouette coefficient 
 3. Calinski-Harabasz Index
 
-**Project Goals:** To develop a classification  of customers into places they are most likely to purchase from.
+**Project Goals:** To develop a classification of customers into places they are most likely to purchase from.
 
 **Expected Results:** An accurate and robust model to assist in targeted marketing for increased sales and customer retention.
 
@@ -101,8 +102,8 @@ A clustering algorithm based on density which allows for cluster sizes and densi
 | Vishnu Varma Venkata | Report, Video, Presentation  |
 
 ### References
-[1]: https://doi.org/10.1073/pnas.1218772110 - `M. Kosinski, D. Stillwell, and T. Graepel, "Private traits and attributes are predictable from digital records of human behavior," Proceedings of the National Academy of Sciences, vol. 110, no. 15, pp. 5802-5805, April 2013.`
+[1]: <a>https://doi.org/10.1073/pnas.1218772110</a> - `M. Kosinski, D. Stillwell, and T. Graepel, "Private traits and attributes are predictable from digital records of human behavior," Proceedings of the National Academy of Sciences, vol. 110, no. 15, pp. 5802-5805, April 2013.`
 
-[2]: https://www.pnas.org/doi/full/10.1073/pnas.1710966114 - `S.C. Matz, M. Kosinski, G. Nave, and D.J. Stillwell, "Psychological targeting as an effective approach to digital mass persuasion," Proceedings of the National Academy of Sciences, vol. 114, no. 48, pp. 12714-12719, November 2017.`
+[2]: <a>https://www.pnas.org/doi/full/10.1073/pnas.1710966114</a> - `S.C. Matz, M. Kosinski, G. Nave, and D.J. Stillwell, "Psychological targeting as an effective approach to digital mass persuasion," Proceedings of the National Academy of Sciences, vol. 114, no. 48, pp. 12714-12719, November 2017.`
 
-[3]: https://doi.org/10.48550/arXiv.2306.17170 - `J. Zhang, Y. Wang, and P.S. Yu, "Community structure detection in social networks with node attributes," IEEE Transactions on Knowledge and Data Engineering, vol. 31, no. 10, pp. 1984-1997, Oct. 2019.`
+> [3]: <a>https://doi.org/10.48550/arXiv.2306.17170</a> - `J. Zhang, Y. Wang, and P.S. Yu, "Community structure detection in social networks with node attributes," IEEE Transactions on Knowledge and Data Engineering, vol. 31, no. 10, pp. 1984-1997, Oct. 2019.`
