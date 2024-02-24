@@ -5,12 +5,12 @@
 ## Proposal
 ### Introduction/Background
 
-The integration of machine learning (ML) in digital marketing revolutionises personalised strategies by analysing customer personality traits. This project aims to harness ML to delve into these traits, enhancing targeted marketing and customer relationships. The untapped potential of ML in extracting and correlating personality traits from vast datasets offers promising prospects for marketing precision and efficiency.
+Using machine learning (ML) in marketing revolutionises personalised strategies by analysing customer traits. This project aims to harness ML to delve into these traits, enhancing targeted marketing and customer relationships. The untapped potential of ML in extracting and correlating traits from vast datasets offers promising prospects for marketing precision and efficiency.
 
 
 ### Literature Review
 
-Machine learning is crucial for personalized marketing, predicting customer personalities from digital footprints (Kosinski, Stillwell, and Graepel [1]), enhancing engagement and sales with personality-tailored advertising (Matz et al. [2]), and enabling deeper personalization through advanced segmentation techniques based on personality traits (Zhang, Wang, and Yu [3]).
+Machine learning is crucial for personalized marketing, predicting customer personalities from digital footprints [1], enhancing engagement and sales with personality-tailored advertising [2], and enabling deeper personalization through advanced segmentation techniques based on personality traits [3].
 
 ### Dataset Description and Link
 
@@ -20,22 +20,24 @@ Dataset Link: [Customer Personality Analysis Dataset](https://www.kaggle.com/dat
 
 ### Problem and Motivation
 
-✔️ **Problem**: Classify customers based on the places they are most likely to buy products from.
+#### Problem
+Classify customers based on the places they are most likely to buy products from.
 
-✔️ **Motivation**: Customer personality analysis enables businesses to tailor their products and marketing strategies based on customer traits, allowing for more effective strategy development from purchase patterns and locations.
+#### Motivation
+Customer analysis enables businesses to tailor their products and marketing strategies based on customer traits, allowing for more effective strategy development from purchase patterns and locations.
 
 ### Methods
 
 #### Preprocessing
 
 #### Feature encoding
-Transforming categorical variables into other representations using one-hot encoding, label encoding, or target encoding since a lot of models require numerical input.
+Transforming categorical variables into other representations using one-hot encoding or label encoding since some models require numerical input.
 
 #### Feature scaling
-Technique applied to make the input features of the dataset belong to  similar ranges and to ensure all features have the same effect on the model.
+Technique applied to make the input features of the dataset belong to similar ranges to ensure all features have the same effect on the model.
 
 #### Dimensionality reduction 
-Transforming the dimensionality of features from higher to lower while retaining most of the information like **PCA** or **LDA**. Higher dimensionality risks creating a complex model which leads to overfitting, requiring higher computation and reduced model interpretability.
+Transforming the dimensionality of features from higher to lower while retaining most of the information like **PCA** or **LDA**. Higher dimensionality creates a complex model which leads to overfitting, requiring higher computation and reduced model interpretability.
 
 #### Correlation
 Dropping highly correlated features to avoid multicollinearity.
@@ -43,25 +45,25 @@ Dropping highly correlated features to avoid multicollinearity.
 #### Supervised Learning Algorithms
 
 #### Linear SVM
-Separates the data using a single linear decision boundary. It is computationally less expensive and relatively faster to train on.
+Separates the data using a single linear decision boundary. It is computationally cheaper and faster to train on.
 
 #### Random Forest
-Separates the data with a non-linear decision boundary and can take into account interactions between variables. They are known to be robust and resistant to overfitting.
+Separates the data with a non-linear decision boundary and takes into account interactions between variables. They are known to be robust and resistant to overfitting.
 
 #### Neural Network
-Separates the data by non-linear decision boundary and can handle large amounts of unstructured data as input. They can model complex patterns between data and can accommodate diverse data distributions as input.
+Separates the data by non-linear decision boundary and handles large amounts of unstructured data as input. They model complex patterns between data and can accommodate diverse data distributions as input.
 
 #### Unsupervised Learning Algorithms
 
 #### K - Means
-Clustering algorithm based on centroids which works best for clusters of even size. 
+Clustering algorithm using centroids which works best for evenly sized clusters.
 
 
 #### Hierarchical Clustering
-Works when the data can be divided hierarchically based on merging samples successively. Does not require us to specify the number of clusters
+Works when the data can be divided hierarchically based on merging samples successively. Doesn't require us to specify number of clusters.
 
 #### OPTICS
-A clustering algorithm based on density which allows for cluster sizes and density to be arbitrary. It is robust to noise and does not require a number of clusters to be specified.
+Clustering algorithms based on density which allows for cluster sizes and density being arbitrary. It is robust to noise and doesn't require specifying number of clusters.
 
 ### Results and Discussion
 
@@ -79,7 +81,7 @@ A clustering algorithm based on density which allows for cluster sizes and densi
 
 **Project Goals:** To develop a classification of customers into places they are most likely to purchase from.
 
-**Expected Results:** An accurate and robust model to assist in targeted marketing for increased sales and customer retention.
+**Expected Results:** An accurate and robust model assisting in targeted marketing for increased sales and customer retention.
 
 ### Proposal Timeline
 [Link to Gantt Chart Spreadsheet](https://gtvault-my.sharepoint.com/:x:/g/personal/braghunathan6_gatech_edu/EdOIA96B63lAuuimPIdRCZ4BP_hUtCNmEp74v8O8sn5kRA?e=7HXVFD)
