@@ -89,6 +89,7 @@ A clustering algorithm based on density which allows for cluster sizes and densi
 ### Proposal Timeline
 
 ### Contribution Table
+
 | Name    | Proposal Contribution              |
 |:---------|:-----------------------------------|
 | Sreenidhi Reddy Bommu | Introduction, Literature Review |
