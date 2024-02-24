@@ -106,4 +106,4 @@ A clustering algorithm based on density which allows for cluster sizes and densi
 
 [2]: <a>https://www.pnas.org/doi/full/10.1073/pnas.1710966114</a> - `S.C. Matz, M. Kosinski, G. Nave, and D.J. Stillwell, "Psychological targeting as an effective approach to digital mass persuasion," Proceedings of the National Academy of Sciences, vol. 114, no. 48, pp. 12714-12719, November 2017.`
 
-> [3]: <a>https://doi.org/10.48550/arXiv.2306.17170</a> - `J. Zhang, Y. Wang, and P.S. Yu, "Community structure detection in social networks with node attributes," IEEE Transactions on Knowledge and Data Engineering, vol. 31, no. 10, pp. 1984-1997, Oct. 2019.`
+[3]: <a>https://doi.org/10.48550/arXiv.2306.17170</a> - `J. Zhang, Y. Wang, and P.S. Yu, "Community structure detection in social networks with node attributes," IEEE Transactions on Knowledge and Data Engineering, vol. 31, no. 10, pp. 1984-1997, Oct. 2019.`
