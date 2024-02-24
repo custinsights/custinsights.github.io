@@ -87,6 +87,7 @@ A clustering algorithm based on density which allows for cluster sizes and densi
 **Expected Results:** An accurate and robust model to assist in targeted marketing for increased sales and customer retention.
 
 ### Proposal Timeline
+[Link to Gantt Chart Spreadsheet](https://gtvault-my.sharepoint.com/:x:/g/personal/braghunathan6_gatech_edu/EdOIA96B63lAuuimPIdRCZ4BP_hUtCNmEp74v8O8sn5kRA?e=7HXVFD)
 ![Gantt Chart](assets/GanttChart.png)
 
 ### Contribution Table
