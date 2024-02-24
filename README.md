@@ -90,7 +90,7 @@ A clustering algorithm based on density which allows for cluster sizes and densi
 
 ### Contribution Table
 | Name    | Proposal Contribution              |
-|---------|-----------------------------------|
+|:---------|:-----------------------------------|
 | Sreenidhi Reddy Bommu | Introduction, Literature Review |
 | Ayushi Mathur | Problem Definition, Motivation   |
 | Sidhant Subramanian | Methods, Results and Discussion |
