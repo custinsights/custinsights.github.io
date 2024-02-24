@@ -96,7 +96,7 @@ A clustering algorithm based on density which allows for cluster sizes and densi
 | Sreenidhi Reddy Bommu | Introduction, Literature Review |
 | Ayushi Mathur | Problem Definition, Motivation   |
 | Sidhant Subramanian | Methods, Results and Discussion |
-| Bharat Raghunathan | GitHub Repository, Gantt Chart |
+| Bharat Raghunathan | GitHub Repository, GitHub Pages, Gantt Chart |
 | Vishnu Varma Venkata | Report, Video, Presentation  |
 
 ### References
