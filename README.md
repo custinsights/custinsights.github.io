@@ -36,19 +36,31 @@ The goal is to identify distinct customer segments that prefer different shoppin
 
 ### Methods
 
-#### Preprocessing
+### Data Preprocessing
 
-#### Feature encoding
-Transforming categorical variables into other representations using one-hot encoding or label encoding since some models require numerical input.
+#### Feature Correlation
 
-#### Feature scaling
-Technique applied to make the input features of the dataset belong to similar ranges to ensure all features have the same effect on the model.
+![Correlation](assets/correlation.png)
+*Correlation Plot of all features*
 
-#### Dimensionality reduction 
-Transforming the dimensionality of features from higher to lower while retaining most of the information like **PCA** or **LDA**. Higher dimensionality creates a complex model which leads to overfitting, requiring higher computation and reduced model interpretability.
+#### Class Distribution
 
-#### Correlation
-Dropping highly correlated features to avoid multicollinearity.
+![alt text](assets/imbalance.png)
+*Class Imbalance*
+
+##### Feature encoding
+First, each category in a categorical feature was convertedf into a numerical value.
+
+##### Removing Irrelevant and Highly Correlated Features
+The customer ID was dropped since it has no significance in the classification.
+
+Among X variables, highly correlated features(>= 90% correlated with each other) were removed.
+
+##### Removing Low-Variance Features
+Constant features and low-variance features were dropped since they are not useful in our model. Ideally constant features are those with `variance = 0`. However, to remove both low variance and constant features the threshold was set to 0.01(1.00%)
+
+##### Standardization
+Individual features were standardized by removing the mean and scaling to unit variance to make them conform to a standard normal distribution.
 
 ## ML Algorithms/Models Implemented
 The methodology adopted in this project involved selecting and training supervised learning algorithms to classify customers. Initially, feature selection was applied to identify relevant features and enhance model performance. Following this, supervised learning algorithms such as Random Forest and Linear SVM, were considered for model training. Hyperparameter tuning was then conducted using grid search to optimise the performance of the selected models. Additionally, unsupervised learning technique, K-means clustering, was employed for customer segmentation based on purchasing behaviour. This involved grouping customers into clusters to gain insights for targeted marketing strategies. Overall, the methodology focused on developing accurate and robust classification models to enhance customer segmentation and improve marketing strategies.
@@ -184,11 +196,11 @@ Overall seeing the trend of training score and cross-validation score it suggest
 
 | Name    | Midterm Contribution              |
 |:---------|:-----------------------------------|
-| Sreenidhi Reddy Bommu | Introduction, Literature Review |
-| Ayushi Mathur | Problem Definition, Motivation   |
-| Sidhant Subramanian | Methods, Results and Discussion |
-| Bharat Raghunathan | GitHub Repository, GitHub Pages, Gantt Chart |
-| Vishnu Varma Venkata | Report, Video, Presentation  |
+| Sreenidhi Reddy Bommu | Introduction/Background, Data Preprocessing, Next Steps |
+| Ayushi Mathur | Methods - Supervised and Unsupervised Learning   |
+| Sidhant Subramanian | Problem Definition, Modeling |
+| Bharat Raghunathan | Data Preprocessing, GitHub Repository, GitHub Pages |
+| Vishnu Varma Venkata | Results and Metrics Discussion  |
 
 ### Next Steps
 
