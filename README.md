@@ -2,11 +2,16 @@
 # Customer Insights
 > Project Group 33: Sidhant Subramanian, Sreenidhi Reddy Bommu, Bharat Raghunathan, Ayushi Mathur, Vishnu Varma Venkata
 
-## Proposal
+## Midterm
 ### Introduction/Background
 
 Using machine learning (ML) in marketing revolutionises personalised strategies by analysing customer traits. This project aims to harness ML to delve into these traits, enhancing targeted marketing and customer relationships. The untapped potential of ML in extracting and correlating traits from vast datasets offers promising prospects for marketing precision and efficiency.
 
+Using machine learning (ML) in marketing has revolutionised the way businesses approach personalised strategies, fundamentally changing the landscape of customer engagement and relationship management.
+
+By leveraging ML algorithms, marketers can now analyse complex datasets to identify intricate customer traits and preferences that are not immediately apparent., enabling a level of personalization that was previously unattainable.
+
+This capability is particularly valuable in marketing, where understanding the nuances of customer behaviour can lead to more effective and personalised engagement strategies.
 
 ### Literature Review
 
@@ -21,10 +26,13 @@ Dataset Link: [Customer Personality Analysis Dataset](https://www.kaggle.com/dat
 ### Problem and Motivation
 
 #### Problem
-Classify customers based on the places they are most likely to buy products from.
+Develop a machine learning model to classify customers based on their likelihood to purchase products from specific categories or channels.
+
+This classification should consider customers' demographic details (age, education, marital status, income), household composition (number of children and teenagers), engagement history (website visits, recency of purchase), and purchasing behaviour (amount spent on various product categories, number of purchases through different channels, responses to marketing campaigns)
+
 
 #### Motivation
-Customer analysis enables businesses to tailor their products and marketing strategies based on customer traits, allowing for more effective strategy development from purchase patterns and locations.
+The goal is to identify distinct customer segments that prefer different shopping venues (online, in-store, catalog) and product categories (wines, fruits, meats, fish, sweets, gold products), enabling personalized marketing strategies. This model will support targeted marketing initiatives by predicting the preferred shopping channels and product categories for new and existing customers, thereby increasing customer engagement and optimizing marketing spend.
 
 ### Methods
 
