@@ -115,9 +115,9 @@ The confusion matrix signifies the effect of the classification model for the gi
 
 ##### Quantitative Metrics
 - Precision measures the proportion of true positive predictions among all positive predictions made by the model, it range from 0 to 1. The precision for both classes is well balanced with class 0 being 0.88 and class 1 being 0.77, this implies the local view of the predictions are quite close.
-- Recall measures the proportion of true positive instances that were correctly identified by the model, it also ranges from 0 to 1. The recall for class 0 is 0.99 which is very close to 1 and captures the features for class 0 very accurately. However the recall for class 1 is 0.22 which is on the lower side. From the perspective of recall the model predicts very well for class 0 but falls behind for class 1.
-- F1 score, which is the harmonic mean of precision and recall. Since we observe that the recall for class 1 is lesser compared to class 0, that impacts the F1 score which captures both precision and recall. The F1 score for class 0 is 0.93 and for class 1 it is 0.35.
- - The overall accuracy of the model is 87.5%, the reduction in the accuracy can be attributed to the lower recall for class 1.
+- Recall measures the proportion of true positive instances that were correctly identified by the model, it also ranges from 0 to 1. The recall for class 0 is 0.99 which is very close to 1 and captures the features for class 0 very accurately. However the recall for class 1 is 0.24 which is on the lower side. From the perspective of recall the model predicts very well for class 0 but falls behind for class 1.
+- F1 score, which is the harmonic mean of precision and recall. Since we observe that the recall for class 1 is lesser compared to class 0, that impacts the F1 score which captures both precision and recall. The F1 score for class 0 is 0.93 and for class 1 it is 0.37.
+ - The overall accuracy of the model is 87.82%, the reduction in the accuracy can be attributed to the lower recall for class 1.
 
 #### SVM
 
@@ -125,8 +125,8 @@ Results:
 
 | Class | Precision | Recall | F1-Score | Support |
 |:------|:----------|:-------|:---------|:--------|
-| 0     |   0.88    |  0.99  |   0.93   |   567   |
-| 1     |   0.77    |  0.24  |   0.37   |   98    |
+| 0     |   0.89    |  0.98  |   0.93   |   567   |
+| 1     |   0.70    |  0.27  |   0.39   |   98    |
 
 **Accuracy:**  87.52%
 
@@ -146,7 +146,7 @@ The confusion matrix signifies the effect of the classification model for the gi
 - The precision for both classes is well balanced with class 0 being 0.89 and class 1 being 0.70, this implies the local view of the predictions are quite close.
 - The recall for class 0 is 0.98 which is very good, while the recall for class 1 is 0.27 which reduces the metrics such as F1 score and accuracy. From the perspective of recall the model predicts very well for class 0 but falls behind for class 1.
 - The trend for F1 score is similar with F1 score for class 0 being 0.93 and for class 1 benign 0.39. In a way when compared with random forest SVM performs slightly better in terms of recall and F1 score.
-- The overall accuracy still remains at 87.5%, again the accuracy reduction is attributed to the reduced recall for class 1.
+- The overall accuracy still remains at 87.52%, again the accuracy reduction is attributed to the reduced recall for class 1.
 
 Overall when we look at random forest and SVM the final accuracy is similar but we are concerned with reducing the false negatives or customers who have responded but are classified as customers who have not and since the recall is higher for SVM instead of Random Forest we choose SVM as the better model of the two.
 
