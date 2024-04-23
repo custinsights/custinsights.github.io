@@ -82,6 +82,16 @@ Random Forest is well-suited for our project's objective of classifying customer
 
 Moreover, decision trees, the building blocks of Random Forest, inherently consider interactions between variables when making split decisions. This feature enables the algorithm to capture complex relationships and interactions within the data, making Random Forest a versatile and powerful tool for our classification task.
 
+#### Neural Networks
+
+Neural networks are a class of machine learning algorithms inspired by the structure and function of the human brain. They consist of interconnected nodes, or neurons, organised into layers. In a typical feedforward neural network, information flows from the input layer through one or more hidden layers to the output layer. Each neuron in a layer receives input signals from the neurons in the previous layer, processes them using an activation function, and produces an output signal that is passed to the next layer.
+
+Neural networks are capable of learning complex patterns and relationships within data, making them well-suited for tasks such as classification, regression, and pattern recognition. During the training process, the network adjusts its parameters, or weights, through a process called backpropagation, in order to minimise the difference between its predictions and the true values in the training data.
+
+One of the key advantages of neural networks is their ability to automatically learn hierarchical representations of data, which allows them to capture intricate patterns and dependencies. Additionally, neural networks can generalise well to unseen data, making them robust and suitable for a wide range of applications.
+
+We have developed a Neural Network model due to its ability to model complex patterns and accommodate diverse data distributions. Neural Networks are particularly effective for classifying non-linearly separable data, making them an excellent choice for our dataset, which includes a wide range of customer behaviours and traits. By leveraging deep learning techniques, we aim to uncover intricate relationships within our data that simpler models might miss.
+
 #### Unsupervised Learning Algorithms
 
 #### K - Means
@@ -91,8 +101,27 @@ Another advantage of K-Means clustering is its simplicity and interpretability. 
 
 In the implemented solution, K-Means clustering was used to group customers based on their purchasing behaviour and identify distinct segments within the dataset. By clustering customers into groups based on their similarity, businesses can gain valuable insights into customer preferences, behaviour, and purchasing patterns. This information can then be used to tailor marketing strategies, improve customer engagement, and drive business growth.
 
-#### Agglomerative Hierarchical Clustering
-In Agglomerative Hierarchical Clustering, each point starts off as its own cluster and as you move up for higher values of distances, clusters get merged into larger clusters.
+#### Hierarchical Clustering
+
+Hierarchical clustering is a powerful technique used in exploratory data analysis to uncover underlying structures within a dataset by organising data points into a tree-like hierarchy of clusters. Unlike partition-based methods, hierarchical clustering does not require specifying the number of clusters beforehand, making it particularly useful for datasets where the number of clusters is not known a priori or when exploring the data at different levels of granularity. The algorithm iteratively merges or splits clusters based on their proximity, forming a dendrogram that illustrates the hierarchical relationships between data points. 
+
+Hierarchical clustering offers flexibility in choosing distance metrics and linkage methods, allowing customization to suit the specific characteristics of the data. This method provides valuable insights into the inherent structure of the data, aiding in understanding patterns, identifying outliers, and making informed decisions in various domains.
+
+Hierarchical clustering is selected to create a hierarchy of clusters, which can be useful for exploring the structure of the data at different levels of granularity. This model allows us to identify naturally occurring groups within our customer base without pre-specifying the number of clusters. 
+
+Hierarchical Clustering is suited for our project as it provides a detailed insight into the customer data's structure, revealing how customer segments are related at different levels of granularity. It will enable us to develop a detailed understanding of customer preferences and behaviours, helping in coming up with  targeted marketing strategies.
+
+#### OPTICS
+
+The OPTICS (Ordering Points To Identify the Clustering Structure) method is a density-based clustering algorithm that aims to identify clusters of arbitrary shape within a dataset. Unlike traditional clustering algorithms, OPTICS does not require specifying the number of clusters in advance. Instead, it produces a reachability plot, which represents the density-based clustering structure of the data. 
+
+OPTICS starts by computing the pairwise distance between all data points and then identifies core points, which are data points with a sufficient number of neighbouring points within a specified distance. By analysing the reachability distance of each point, OPTICS constructs a reachability plot that characterises the density-based structure of the data. This plot allows for the identification of clusters as regions of high density separated by regions of low density. 
+
+OPTICS is particularly useful for datasets with varying densities and irregularly shaped clusters, as it can adapt to the local density of the data. Additionally, OPTICS offers parameters such as minimum samples ($\epsilon$), $\xi$, and minimum cluster size, providing flexibility in adjusting the algorithm's sensitivity to density variations.
+
+This model helps in handling varying cluster sizes and densities effectively. This model is particularly beneficial for our dataset, which likely contains diverse customer segments. OPTICS helps us identify these segments based on density, overcoming the limitations of models that assume clusters of similar sizes. 
+
+By employing OPTICS, we aim to achieve a more flexible and accurate segmentation of our customer base, improving our ability to target marketing efforts effectively.
 
 ### Results and Discussion
 
@@ -330,7 +359,9 @@ From these plots, it can be inferred that the clusters are divided into high and
 
 ### Next Steps
 
-In these final phases of our customer insights project, the last phase will involve productionizing/deploying these machine learning models and roll out targeted marketing ads/campaigns based on these models' performance and our understanding of customer data.
+Moving forward, it would be beneficial to further enhance the analysis by considering additional models or methods to gain deeper insights into the dataset. One potential avenue is to explore ensemble clustering techniques, such as Consensus Clustering or Cluster Ensemble, which combine multiple clustering algorithms to improve the robustness and stability of the results. These methods can provide more reliable cluster assignments by aggregating the outputs of individual clustering algorithms.
+
+In these final phases of our customer insights project, the last phase will involve productionizing/deploying existing machine learning models and roll out targeted marketing ads/campaigns based on these models' performance and our understanding of customer data.
 
 ### References
 [1]: <a>https://doi.org/10.1073/pnas.1218772110</a> - `M. Kosinski, D. Stillwell, and T. Graepel, "Private traits and attributes are predictable from digital records of human behavior," Proceedings of the National Academy of Sciences, vol. 110, no. 15, pp. 5802-5805, April 2013.`
