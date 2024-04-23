@@ -117,7 +117,7 @@ The OPTICS (Ordering Points To Identify the Clustering Structure) method is a de
 
 OPTICS starts by computing the pairwise distance between all data points and then identifies core points, which are data points with a sufficient number of neighbouring points within a specified distance. By analysing the reachability distance of each point, OPTICS constructs a reachability plot that characterises the density-based structure of the data. This plot allows for the identification of clusters as regions of high density separated by regions of low density. 
 
-OPTICS is particularly useful for datasets with varying densities and irregularly shaped clusters, as it can adapt to the local density of the data. Additionally, OPTICS offers parameters such as minimum samples ($\epsilon$), $\xi$, and minimum cluster size, providing flexibility in adjusting the algorithm's sensitivity to density variations.
+OPTICS is particularly useful for datasets with varying densities and irregularly shaped clusters, as it can adapt to the local density of the data. Additionally, OPTICS offers parameters such as minimum samples (epsilon), reachability(xi), and minimum cluster size, providing flexibility in adjusting the algorithm's sensitivity to density variations.
 
 This model helps in handling varying cluster sizes and densities effectively. This model is particularly beneficial for our dataset, which likely contains diverse customer segments. OPTICS helps us identify these segments based on density, overcoming the limitations of models that assume clusters of similar sizes. 
 
