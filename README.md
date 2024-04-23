@@ -156,6 +156,7 @@ Overall when we look at random forest and SVM the final accuracy is similar but 
 #### Neural Networks
 
 Results:
+
 | Class       | Precision | Recall | F1-Score | Support |
 |:------------|:----------|:-------|:---------|:--------|
 | 0           | 0.90      | 0.96   | 0.93     | 567     |
