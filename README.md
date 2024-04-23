@@ -41,11 +41,13 @@ The goal is to identify distinct customer segments that prefer different shoppin
 #### Feature Correlation
 
 ![Correlation](assets/correlation.png)
+
 *Correlation Plot of all features*
 
 #### Class Distribution
 
 ![alt text](assets/imbalance.png)
+
 *Class Imbalance*
 
 ##### Feature encoding
@@ -112,6 +114,7 @@ Results:
 
 
 ![alt text](assets/confusionmatrixrf.png)
+
 *Confusion Matrix for Random Forest*
 
 The confusion matrix signifies the effect of the classification model for the given dataset, and random forest perform well for this dataset. We observe that with respect to class 0 the correct predictions highly dominate and perform very well. While for class 1 the number of false predictions dominates. This shows that random forest is not performing effectively for class 1.
@@ -140,6 +143,7 @@ Results:
 
 
 ![ConfusionMatrix](assets/confusionmatrixsvm.png)
+
 *Confusion Matrix for SVM*
 
 The confusion matrix signifies the effect of the classification model for the given dataset, and SVM performs well for this dataset. We observe that with respect to class 0 the correct predictions highly dominate and perform very well. While for class 1 the number of false predictions dominates. This shows that the model is not performing effectively for class 1. We shall analyse the models based on quantitative metrics below.
@@ -171,6 +175,7 @@ Results:
 
 
 ![Confusion Matrix for NN](assets/confusionmatrixnn.png)
+
 *Confusion Matrix for Neural Networks*
 
 The confusion matrix signifies the effect of the classification model for the given dataset, and Neural Networks too perform well for this dataset. We observe that with respect to class 0 the correct predictions highly dominate and perform very well. While for class 1 the number of false predictions dominates. This shows that the model is not performing effectively for class 1. We shall analyse the models based on quantitative metrics below.
@@ -180,19 +185,25 @@ The confusion matrix signifies the effect of the classification model for the gi
 - This improvement comes at a slight cost, a difference emerges in the precision where it is 0.90 for class 0 but only 0.62 for class 1. The overall recall for class 0 still remains excellent at 0.96.
 - The overall accuracy remains at the same range, which is at 87.67%, where the model appears to have traded decreased precision in class 1 for increased recall in class 1.
 
+#### Summary of Supervised Models
+In this problem's context, the most costly errors are **false negatives (FNs)** because classifying a customer likely to respond (1) as one who did not (0), can make us lose a potential target/conversion (and thereby revenue), hence this makes the class 1 recall the most important metric. From that perspective, **Neural Networks** were the best performing model amongst all of them with the highest class 1 recall (0.42) and lowest FNs (57).
+
+
 #### K-Means Clustering
 ##### Quantitative Metrics
 - The silhouette coefficient for the best hyperparameters obtained by grid search is 0.6613. The range of the silhouette coefficient is from -1 to 1. The higher the silhouette coefficient, the better the clustering quality in unsupervised learning. A score close to 1 indicates the data points clustered well and are far away from neighboring clusters. The silhouette coefficient we obtained is close to 1 and signifies that this clustering model is well suited for the given dataset.
 
-Elbow Method
+##### Elbow Method
 
 ![alt text](assets/elbow.png)
+
 *Elbow Method - Inertia*
 
 ![alt text](assets/distortion.png)
+
 *Elbow Method - Distortion*
 
-In unsupervised learning, the Elbow method is used to determine the number of clusters. Inertia estimates the sum of squares within the cluster. It measures the squared distances of samples to their closest center. A lower value of inertia is better, implying the clusters are dense and separated. 
+In unsupervised learning and in particular for K-Means, the Elbow method is used to determine the number of clusters. Inertia estimates the sum of squares within the cluster. It measures the squared distances of samples to their closest center. A lower value of inertia is better, implying the clusters are dense and separated. 
 
 Distortion measures the average of the squared distances from cluster centers to data points. Lower distortion is better, implying compact clusters and the centroids being close. Both plots can be used to determine the number of clusters.
 
@@ -203,6 +214,7 @@ From the curve, we can determine the number of clusters by identifying the elbow
 - In this case, the silhouette coefficient for the best hyperparameters obtained by grid search turns out to be 0.6472. Since a higher silhouette coefficient closer to 1 denotes better clustering quality, we can conclude that hierarchical clustering performs almost at par with K-Means for this dataset.
 
 ![alt text](assets/dendrogram.png)
+
 *Dendrogram of Hierarchical Clustering*
 
 Each branch in a dendrogram represents a cluster and as you move up the tree, clusters are merged into larger clusters. The height at which two branches are joined indicates distance between two clusters, wherein a higher joining point means greater dissimilarity between clusters.
@@ -217,7 +229,12 @@ This could probably mean that the dataset is not split into regions of high dens
 
 #### Supervised Model Analysis
 
+We shall examine the learning curves of all the supervised models trained so far.
+
+##### Random Forest
+
 ![Learning Curve](assets/learningcurverf.png)
+
 *Learning Curve for Random Forest*
 
 The learning curve explores the effect of the size of the training data on the training and cross-validation scores. From the learning curve for the random forest, the training score increases profoundly until 1000 samples and beyond that we can see a linear increase as well but not as steep as towards the left half of the plot.
@@ -226,7 +243,10 @@ While the cross-validation scores show a trend of increasing testing scores almo
 
 Considering the right part of the plot where the dataset is large enough, we observe that the training score stands at 0.94 and cross-validation score stands at 0.87. Since both the scores are increasing with higher training sizes it captures the patterns effectively.
 
+##### SVM
+
 ![Learning Curves SVM](assets/learningcurvesvm.png)
+
 *Learning Curve for SVM*
 
 For the obtained model after taking the best hyperparameters from cross validation, we have the learning curve. We see that the cross-validation scores increases throughout, even thought the training scores see a slight decrement. This indicates the improvement in generalization of the model as it is improving its ability to generalize to unseen data effectively. 
@@ -235,7 +255,10 @@ This model captures the underlying patterns of the data that are consistent acro
 
 Overall seeing the trend of training score and cross-validation score it suggests that the model is moving towards a better balance between capturing patterns in the data and generalizing to unseen data.
 
+##### Neural Networks
+
 ![Learning Curves NN](assets/learningcurvenn.png)
+
 *Learning Curve for Neural Network*
 
 For this model too, the learning curve is taken on the best hyperparameters found via grid search using cross validation. We can observe that the training scores are increasing (even though cross validation scores remain constant), indicating a well fitted and generalized model.
@@ -245,37 +268,51 @@ Since both the training and cross validation scores are at reasonably high value
 Observing the overall trend of increasing training scores converging to the high cross validation scores on increasing numbers of samples, the model performance is gradually improving on the training data. However, because the performance is plateauing after a point, adding more data may not significantly improve the model's performance.
 
 #### Unsupervised Cluster Analysis
+
 The plot of the cluster sizes is as follows:
+
 ![Cluster Distributions](assets/clustersizes.png)
+
 *Cluster Distribution*
 
 Next, a decision tree was trained (fitted) on the cluster labels in order to examine what features the clusters were composed of.
 
 ![Cluster Features](assets/decisiontree.jpg)
+
 *Cluster Features*
 
 We find that **income is the primary factor** for the clustering or in other words, we can infer that the data has been clustered into low-income and high-income groups.
 
-Some more features were further analyzed to compare and contrast the two clusters by using boxplots.
+After analyzing all the features, we found significant results in these selected features, wherein the features were compared and contrasted between the two clusters by using boxplots.
 
 **Feature:** Income
+
 ![Boxplot of Income](assets/boxplotincome.png)
+
 *Income Between Clusters*
 
 **Feature:** Amount Spent on Wines
+
 ![Boxplot of Income](assets/boxplotwines.png)
+
 *Amount Spent on Wines Between Clusters*
 
+
 **Feature:** Amount Spent on Meat Products
+
 ![Boxplot of Income](assets/boxplotmeat.png)
+
 *Amount Spent on Meat Products Between Clusters*
 
 **Feature:** Amount Spent on Fish Products
+
 ![Boxplot of Income](assets/boxplotfish.png)
+
 *Amount Spent on Fish Products Between Clusters*
 
 ##### Discussion/Inference
-From these plots, it can be inferred that the clusters are divided into high and low income groups. Additionally, it can be inferred that the high income cluster also spend higher amounts on wines, meat and fish products compared to the lower income cluster.
+
+From these plots, it can be inferred that the clusters are divided into high and low income groups. Additionally, it can be inferred that the high income cluster also spend higher amounts on wines, meat and fish products compared to the lower income cluster. This shall be useful in informing marketers where to target their ad campaigns to cater to such categories of customers.
 
 ### Final Timeline
 [Link to Gantt Chart Spreadsheet](https://gtvault-my.sharepoint.com/:x:/g/personal/braghunathan6_gatech_edu/EdOIA96B63lAuuimPIdRCZ4BP_hUtCNmEp74v8O8sn5kRA?e=7HXVFD)
@@ -293,28 +330,7 @@ From these plots, it can be inferred that the clusters are divided into high and
 
 ### Next Steps
 
-As we continue to refine our customer insights project, the next phase will involve the implementation of additional machine learning models to further enhance our understanding and segmentation of customer data. It is helpful  for improving our marketing strategies and achieving a higher degree of personalization in our customer engagement efforts.
-
-The models to be implemented include:
-
-#### Supervised Learning
-##### Neural Network
-- We plan to develop a Neural Network model due to its ability to model complex patterns and accommodate diverse data distributions. Neural Networks are particularly effective for classifying non-linearly separable data, making them an excellent choice for our dataset, which includes a wide range of customer behaviors and traits.
-
-- By leveraging deep learning techniques, we aim to uncover intricate relationships within our data that simpler models might miss.
-
-#### Unsupervised Learning
-##### Hierarchical Clustering
-- This model will allow us to identify naturally occurring groups within our customer base without pre-specifying the number of clusters. Hierarchical Clustering is suited for our project as it provides a detailed insight into the customer data's structure, revealing how customer segments are related at different levels of granularity. 
-
-- This will enable us to develop a detailed understanding of customer preferences and behaviours, helping in coming up with  targeted marketing strategies.
-
-##### OPTICS
-- This is another unsupervised learning model we plan to implement, it helps in handling varying cluster sizes and densities effectively. This model is particularly beneficial for our dataset, which likely contains diverse customer segments. 
-
-- OPTICS will help us identify these segments based on density, overcoming the limitations of models that assume clusters of similar sizes. By employing OPTICS, we aim to achieve a more flexible and accurate segmentation of our customer base, improving our ability to target marketing efforts effectively.
-
-Each of these models will be tested and evaluated to ensure they meet our project's objectives. The implementation of these models helps in achieving a better understanding of our customers, enabling the delivery of highly personalized marketing messages that resonate with each segment's unique preferences and needs.
+In these final phases of our customer insights project, the last phase will involve productionizing/deploying these machine learning models and roll out targeted marketing ads/campaigns based on these models' performance and our understanding of customer data.
 
 ### References
 [1]: <a>https://doi.org/10.1073/pnas.1218772110</a> - `M. Kosinski, D. Stillwell, and T. Graepel, "Private traits and attributes are predictable from digital records of human behavior," Proceedings of the National Academy of Sciences, vol. 110, no. 15, pp. 5802-5805, April 2013.`
