@@ -2,7 +2,7 @@
 # Customer Insights
 > Project Group 33: Sidhant Subramanian, Sreenidhi Reddy Bommu, Bharat Raghunathan, Ayushi Mathur, Vishnu Varma Venkata
 
-## Midterm
+## Final
 ### Introduction/Background
 
 Using machine learning (ML) in marketing revolutionises personalised strategies by analysing customer traits. This project aims to harness ML to delve into these traits, enhancing targeted marketing and customer relationships. The untapped potential of ML in extracting and correlating traits from vast datasets offers promising prospects for marketing precision and efficiency.
@@ -83,11 +83,14 @@ Moreover, decision trees, the building blocks of Random Forest, inherently consi
 #### Unsupervised Learning Algorithms
 
 #### K - Means
-K-Means clustering is an unsupervised learning algorithm that partitions data points into clusters based on their similarity. It works by iteratively assigning data points to the nearest cluster centroid and updating the centroids based on the mean of the data points assigned to each cluster. One of the key reasons for selecting K-Means clustering is its ability to work well with datasets of even cluster sizes. Unlike some other clustering algorithms, K-Means does not require the number of clusters to be specified beforehand, making it flexible and adaptable to different datasets. This property allows K-Means to identify clusters of varying sizes and densities, making it suitable for a wide range of applications.
+K-Means clustering is an unsupervised learning algorithm that partitions data points into clusters based on their similarity. It works by iteratively assigning data points to the nearest cluster centroid and updating the centroids based on the mean of the data points assigned to each cluster. One of the key reasons for selecting K-Means clustering is its ability to work well with datasets of even cluster sizes.
 
 Another advantage of K-Means clustering is its simplicity and interpretability. The algorithm is easy to implement and understand, making it accessible to users with varying levels of expertise in machine learning. By clustering data based on centroids, K-Means provides a clear and intuitive representation of the underlying structure of the data, making it useful for exploratory data analysis and pattern recognition tasks.
 
 In the implemented solution, K-Means clustering was used to group customers based on their purchasing behaviour and identify distinct segments within the dataset. By clustering customers into groups based on their similarity, businesses can gain valuable insights into customer preferences, behaviour, and purchasing patterns. This information can then be used to tailor marketing strategies, improve customer engagement, and drive business growth.
+
+#### Agglomerative Hierarchical Clustering
+In Agglomerative Hierarchical Clustering, each point starts off as its own cluster and as you move up for higher values of distances, clusters get merged into larger clusters.
 
 ### Results and Discussion
 
@@ -139,7 +142,7 @@ Results:
 ![ConfusionMatrix](assets/confusionmatrixsvm.png)
 *Confusion Matrix for SVM*
 
-The confusion matrix signifies the effect of the classification model for the given dataset, and both random forest and SVM perform well for this dataset. We observe that with respect to class 0 the correct predictions highly dominate and perform very well. While for class 1 the number of false predictions dominates. This shows that the models are not performing effectively for class 1. We shall analyse the models based on quantitative metrics below.
+The confusion matrix signifies the effect of the classification model for the given dataset, and SVM performs well for this dataset. We observe that with respect to class 0 the correct predictions highly dominate and perform very well. While for class 1 the number of false predictions dominates. This shows that the model is not performing effectively for class 1. We shall analyse the models based on quantitative metrics below.
 
 ##### Quantitative Metrics
 - We can observe a similar trend for SVM when compared to random forest. 
@@ -150,9 +153,35 @@ The confusion matrix signifies the effect of the classification model for the gi
 
 Overall when we look at random forest and SVM the final accuracy is similar but we are concerned with reducing the false negatives or customers who have responded but are classified as customers who have not and since the recall is higher for SVM instead of Random Forest we choose SVM as the better model of the two.
 
+#### Neural Networks
+
+Results:
+| Class       | Precision | Recall | F1-Score | Support |
+|:------------|:----------|:-------|:---------|:--------|
+| 0           | 0.90      | 0.96   | 0.93     | 567     |
+| 1           | 0.62      | 0.42   | 0.50     | 98      |
+
+**Accuracy:**  87.67%
+
+| Metric       | Precision | Recall | F1-Score | Support |
+|:-------------|:----------|:-------|:---------|:--------|
+| Macro Avg    | 0.76      | 0.69   | 0.71     | 665     |
+| Weighted Avg | 0.86      | 0.88   | 0.87     | 665     |
+
+
+![Confusion Matrix for NN](assets/confusionmatrixnn.png)
+*Confusion Matrix for Neural Networks*
+
+The confusion matrix signifies the effect of the classification model for the given dataset, and Neural Networks too perform well for this dataset. We observe that with respect to class 0 the correct predictions highly dominate and perform very well. While for class 1 the number of false predictions dominates. This shows that the model is not performing effectively for class 1. We shall analyse the models based on quantitative metrics below.
+
+##### Quantitative Metrics
+- Compared to Random Forests and SVM, Neural Networks have a significant improvement in the F1 Score for class 1 to 0.5, because of the significant improvement in recall to 0.42, which outweighs the decrease in precision.
+- This improvement comes at a slight cost, a difference emerges in the precision where it is 0.90 for class 0 but only 0.62 for class 1. The overall recall for class 0 still remains excellent at 0.96.
+- The overall accuracy remains at the same range, which is at 87.67%, where the model appears to have traded decreased precision in class 1 for increased recall in class 1.
+
 #### K-Means Clustering
 ##### Quantitative Metrics
-- The silhouette coefficient for the best hyperparameters obtained by grid search is 0.67353. The range of the silhouette coefficient is from -1 to 1. The higher the silhouette coefficient, the better the clustering quality in unsupervised learning. A score close to 1 indicates the data points clustered well and are far away from neighboring clusters. The silhouette coefficient we obtained is close to 1 and signifies that this clustering model is well suited for the given dataset.
+- The silhouette coefficient for the best hyperparameters obtained by grid search is 0.6613. The range of the silhouette coefficient is from -1 to 1. The higher the silhouette coefficient, the better the clustering quality in unsupervised learning. A score close to 1 indicates the data points clustered well and are far away from neighboring clusters. The silhouette coefficient we obtained is close to 1 and signifies that this clustering model is well suited for the given dataset.
 
 Elbow Method
 
@@ -162,18 +191,35 @@ Elbow Method
 ![alt text](assets/distortion.png)
 *Elbow Method - Distortion*
 
-In unsupervised learning, the Elbow method is used to determine the number of clusters. Inertia estimates the sum of squares within the cluster. It measures the squared distances of samples to their closest center. Lower the inertia it is better, implying the clusters are dense and separated. 
+In unsupervised learning, the Elbow method is used to determine the number of clusters. Inertia estimates the sum of squares within the cluster. It measures the squared distances of samples to their closest center. A lower value of inertia is better, implying the clusters are dense and separated. 
 
 Distortion measures the average of the squared distances from cluster centers to data points. Lower distortion is better, implying compact clusters and the centroids being close. Both plots can be used to determine the number of clusters.
 
-From the curve, we can determine the number of clusters by identifying the elbow. We can observe that after 7 clusters, the curve is linear, so the number of clusters can be taken as 7 for the K-means clustering model under consideration.
+From the curve, we can determine the number of clusters by identifying the elbow. We can observe that there is a sharp drop in slope after 2 clusters, so the number of clusters can be taken as 2 for the K-means clustering model under consideration, which also matches the best parameter values obtained from hyperparameter grid search.
+
+#### Hierarchical Clustering
+##### Quantitative Metrics
+- In this case, the silhouette coefficient for the best hyperparameters obtained by grid search turns out to be 0.6472. Since a higher silhouette coefficient closer to 1 denotes better clustering quality, we can conclude that hierarchical clustering performs almost at par with K-Means for this dataset.
+
+![alt text](assets/dendrogram.png)
+*Dendrogram of Hierarchical Clustering*
+
+Each branch in a dendrogram represents a cluster and as you move up the tree, clusters are merged into larger clusters. The height at which two branches are joined indicates distance between two clusters, wherein a higher joining point means greater dissimilarity between clusters.
+
+To determine the number of clusters for any given value of distance, a horizontal cut line is made across the tree and the number of vertical lines this intersects is the number of clusters obtained at that value of distance. The distance is typically determined by some criterion specific to the problem. In our case, the largest join height (corresponding to the tall blue lines) corresponds to 2 clusters, hence that appears to be the optimal number of clusters to be considered.
+
+#### OPTICS
+##### Quantitative Metrics
+ - For this method, the silhouette coefficient for the best hyperparameters obtained by grid search turns out to be significantly lower at 0.4823. Since a lower silhouette coefficient closer to 0 denotes poorer clustering quality, we can conclude that OPTICS does not perform as well as the previous methods K-Means or Hierarchical Clustering for this dataset.
+
+This could probably mean that the dataset is not split into regions of high density and regions of low density, in other words the data may not be composed of regions of varying densities. Similarly, it could also be due to high-dimensional nature of data, or it could be due to a big difference in cluster sizes.
 
 #### Supervised Model Analysis
 
 ![Learning Curve](assets/learningcurverf.png)
 *Learning Curve for Random Forest*
 
-The learning curve explores the effect of the size of the training data on the training and cross-validation scores. From the learning curve for the random forest, the training score increases profoundly until 1000 samples and beyond that we can see a linear increase as well but not as steep as towards the left half of the plot. 
+The learning curve explores the effect of the size of the training data on the training and cross-validation scores. From the learning curve for the random forest, the training score increases profoundly until 1000 samples and beyond that we can see a linear increase as well but not as steep as towards the left half of the plot.
 
 While the cross-validation scores show a trend of increasing testing scores almost linearly throughout as the training sample size is increased. Since both the training and cross-validation scores are increasing and are at a good range of values we don’t observe any overfitting or underfitting in the learning curve. 
 
@@ -188,19 +234,61 @@ This model captures the underlying patterns of the data that are consistent acro
 
 Overall seeing the trend of training score and cross-validation score it suggests that the model is moving towards a better balance between capturing patterns in the data and generalizing to unseen data.
 
-### Midterm Timeline
+![Learning Curves NN](assets/learningcurvenn.png)
+*Learning Curve for Neural Network*
+
+For this model too, the learning curve is taken on the best hyperparameters found via grid search using cross validation. We can observe that the training scores are increasing (even though cross validation scores remain constant), indicating a well fitted and generalized model.
+
+Since both the training and cross validation scores are at reasonably high values (> 0.8 each), one can infer that the model fitted to the data very quickly and is very gradually improving its generalization capabilities over more iterations.
+
+Observing the overall trend of increasing training scores converging to the high cross validation scores on increasing numbers of samples, the model performance is gradually improving on the training data. However, because the performance is plateauing after a point, adding more data may not significantly improve the model's performance.
+
+#### Unsupervised Cluster Analysis
+The plot of the cluster sizes is as follows:
+![Cluster Distributions](assets/clustersizes.png)
+*Cluster Distribution*
+
+Next, a decision tree was trained (fitted) on the cluster labels in order to examine what features the clusters were composed of.
+
+![Cluster Features](assets/decisiontree.jpg)
+*Cluster Features*
+
+We find that **income is the primary factor** for the clustering or in other words, we can infer that the data has been clustered into low-income and high-income groups.
+
+Some more features were further analyzed to compare and contrast the two clusters by using boxplots.
+
+**Feature:** Income
+![Boxplot of Income](assets/boxplotincome.png)
+*Income Between Clusters*
+
+**Feature:** Amount Spent on Wines
+![Boxplot of Income](assets/boxplotwines.png)
+*Amount Spent on Wines Between Clusters*
+
+**Feature:** Amount Spent on Meat Products
+![Boxplot of Income](assets/boxplotmeat.png)
+*Amount Spent on Meat Products Between Clusters*
+
+**Feature:** Amount Spent on Fish Products
+![Boxplot of Income](assets/boxplotfish.png)
+*Amount Spent on Fish Products Between Clusters*
+
+##### Discussion/Inference
+From these plots, it can be inferred that the clusters are divided into high and low income groups. Additionally, it can be inferred that the high income cluster also spend higher amounts on wines, meat and fish products compared to the lower income cluster.
+
+### Final Timeline
 [Link to Gantt Chart Spreadsheet](https://gtvault-my.sharepoint.com/:x:/g/personal/braghunathan6_gatech_edu/EdOIA96B63lAuuimPIdRCZ4BP_hUtCNmEp74v8O8sn5kRA?e=7HXVFD)
 ![Gantt Chart](assets/GanttChart.png)
 
 ### Contribution Table
 
-| Name    | Midterm Contribution              |
+| Name    | Final Contribution              |
 |:---------|:-----------------------------------|
-| Sreenidhi Reddy Bommu | Introduction/Background, Data Preprocessing, Next Steps |
-| Ayushi Mathur | Methods - Supervised and Unsupervised Learning   |
+| Sreenidhi Reddy Bommu | Data Preprocessing, Presentation |
+| Ayushi Mathur | Methods - Supervised and Unsupervised Learning, Next Steps |
 | Sidhant Subramanian | Problem Definition, Modeling |
-| Bharat Raghunathan | Data Preprocessing, GitHub Repository, GitHub Pages |
-| Vishnu Varma Venkata | Results and Metrics Discussion  |
+| Bharat Raghunathan | Results and Discussion, GitHub Repository, GitHub Pages |
+| Vishnu Varma Venkata | Video, Presentation |
 
 ### Next Steps
 
