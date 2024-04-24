@@ -296,6 +296,10 @@ Since both the training and cross validation scores are at reasonably high value
 
 Observing the overall trend of increasing training scores converging to the high cross validation scores on increasing numbers of samples, the model performance is gradually improving on the training data. However, because the performance is plateauing after a point, adding more data may not significantly improve the model's performance.
 
+##### Discussion/Inference
+
+We have built models which can classify whether customers will respond to at least one out of 5 different ad campaigns, and if that is the case, we can send ad campaigns only to that category of customers, thereby focusing resources and reducing overall ad spend.
+
 #### Unsupervised Cluster Analysis
 
 The plot of the cluster sizes is as follows:
